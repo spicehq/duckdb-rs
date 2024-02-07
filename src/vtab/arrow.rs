@@ -41,7 +41,7 @@ struct ArrowInitData {
 
 impl Free for ArrowInitData {}
 
-struct ArrowVTab;
+pub struct ArrowVTab;
 
 unsafe fn address_to_arrow_schema(address: usize) -> FFI_ArrowSchema {
     let ptr = address as *mut FFI_ArrowSchema;
