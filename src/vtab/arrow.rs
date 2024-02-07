@@ -19,7 +19,7 @@ use arrow::{
 use num::cast::AsPrimitive;
 
 #[repr(C)]
-struct ArrowBindData {
+pub struct ArrowBindData {
     rb: *mut RecordBatch,
 }
 
@@ -35,7 +35,7 @@ impl Free for ArrowBindData {
 }
 
 #[repr(C)]
-struct ArrowInitData {
+pub struct ArrowInitData {
     done: bool,
 }
 
