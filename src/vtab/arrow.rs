@@ -324,6 +324,12 @@ fn primitive_array_to_vector(array: &dyn Array, out: &mut dyn Vector) {
                 out.as_mut_any().downcast_mut().unwrap(),
             );
         }
+        DataType::Timestamp(_, _) => {
+            primitive_array_to_flat_vector::<TimestampType>(
+                as_primitive_array(array),
+                out.as_mut_any().downcast_mut().unwrap(),
+            );
+        }
         // DataType::Decimal256(_, _) => {
         //     primitive_array_to_flat_vector::<Decimal256Type>(
         //         as_primitive_array(array),
