@@ -331,6 +331,7 @@ fn primitive_array_to_vector(array: &dyn Array, out: &mut dyn Vector) {
         //     );
         // }
         _ => {
+            println!("Unsupported data type: {:?}", array.data_type());
             todo!()
         }
     }
